@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CoffeeShop</string>
+    <string name="title_activity_main">CoffeeShop</string>
+    <string name="edit_txt">Name</string>
+    <string name="choxo">Chocolate</string>
+    <string name="whipx">Whipped Cream</string>
+    <string name="quantx">Quantity</string>
+    <string name="quanx">1</string>
+    <string name="minux">-</string>
+    <string name="plux">+</string>
+    <string name="summex">Order Summary</string>
+    <string name="sum_quan">$0</string>
+    <string name="sub_btn">Submit </string>
+	
+</resources>
