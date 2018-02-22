@@ -15,6 +15,7 @@
 			android:layout_marginLeft="16dp"
 			android:layout_marginBottom="16dp"
 			android:backgroundTint="#ff00"
+			android:inputType="textCapWords"
 			android:hint="@string/edit_txt" />
 
 		<TextView
@@ -31,7 +32,6 @@
 			android:layout_marginLeft="16dp"
 			android:paddingLeft="24dp"
 			android:text="@string/choxo"
-			android:inputType="textCapWords"
 			android:textSize="18sp" />
 
 		<CheckBox 
