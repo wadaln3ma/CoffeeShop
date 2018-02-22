@@ -13,6 +13,8 @@ public class MainActivity extends Activity {
 
 	private int quantity = 1;
 	private CheckBox checkBox, check;
+	private EditText nameField;
+	private TextView quantit;
 	
 
 	@Override
@@ -22,6 +24,8 @@ public class MainActivity extends Activity {
 		
 		checkBox = (CheckBox) findViewById(R.id.chocoCheck);
 		check = (CheckBox) findViewById(R.id.creamCheck);
+		nameField = (EditText) findViewById(R.id.txt_name);
+		quantit = (TextView) findViewById(R.id.quantity);
 
 	}
 
@@ -56,9 +60,8 @@ public class MainActivity extends Activity {
 		}
 		
 		price *= quantity;
-		EditText name = (EditText) findViewById(R.id.txt_name);
-		String Name = name.getText().toString();
-		String priceMessage = "Name : " + Name +"\n"
+		String name = nameField.getText().toString();
+		String priceMessage = "Name : " + name +"\n"
 		+"Add whipped Creame : " + hasWhippedCream +"\n"
 		+"Add Chocolate : " + hasChocolate +"\n"
 		+ "$" + price
@@ -66,7 +69,7 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(Intent.ACTION_SENDTO);
 		intent.setData(Uri.parse("mailto:"));
 		intent.putExtra(Intent.EXTRA_SUBJECT
-						, "Order For " + Name);
+						, "Order For " + name);
 		intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
 		if (intent.resolveActivity(getPackageManager()) != null) {
 			startActivity(intent);
@@ -75,7 +78,6 @@ public class MainActivity extends Activity {
 	}
 
 	private void displayQuantity(int quanx){
-		TextView quantit = (TextView) findViewById(R.id.quantity);
 		quantit.setText(String.valueOf(quantity));
 	}
 
