@@ -4,6 +4,7 @@
     <string name="app_name">CoffeeShop</string>
     <string name="title_activity_main">CoffeeShop</string>
     <string name="edit_txt">Name</string>
+	<string name="topping">Toppings</string>
     <string name="choxo">Chocolate</string>
     <string name="whipx">Whipped Cream</string>
     <string name="quantx">Quantity</string>

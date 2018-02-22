@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
 
 	}
 
@@ -54,7 +55,7 @@ public class MainActivity extends Activity {
 		if (intent.resolveActivity(getPackageManager()) != null) {
 			startActivity(intent);
 		}
-		//orderSummary(price);
+	
 	}
 
 	private void displayQuantity(int quanx){
@@ -62,12 +63,6 @@ public class MainActivity extends Activity {
 		quantit.setText(String.valueOf(quantity));
 	}
 
-	/*
-	private void orderSummary (int prc){
-		TextView summaryMessage = (TextView) findViewById (R.id.summary);
-		summaryMessage.setText("$" + prc);
-	}
-	*/
-
+	
 }
 
