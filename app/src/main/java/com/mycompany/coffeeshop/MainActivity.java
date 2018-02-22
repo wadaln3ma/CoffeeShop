@@ -11,13 +11,17 @@ import com.mycompany.coffeeshop.*;
 
 public class MainActivity extends Activity {
 
-	int quantity = 1;
+	private int quantity = 1;
+	private CheckBox checkBox, check;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
+		checkBox = (CheckBox) findViewById(R.id.chocoCheck);
+		check = (CheckBox) findViewById(R.id.creamCheck);
 
 	}
 
@@ -42,11 +46,23 @@ public class MainActivity extends Activity {
 
 	public void calculatePrice (View view){
 		int price = 5;
+		boolean hasChocolate = checkBox.isChecked();
+			boolean hasWhippedCream = check.isChecked();
+		if (hasChocolate){
+			price += 2;
+		}
+		if (hasWhippedCream){
+			price += 1;
+		}
+		
 		price *= quantity;
 		EditText name = (EditText) findViewById(R.id.txt_name);
 		String Name = name.getText().toString();
-		String priceMessage = Name +"\n"
-		+ "$" + price ;
+		String priceMessage = "Name : " + Name +"\n"
+		+"Add whipped Creame : " + hasWhippedCream +"\n"
+		+"Add Chocolate : " + hasChocolate +"\n"
+		+ "$" + price
+		+ "\nThank you!";
 		Intent intent = new Intent(Intent.ACTION_SENDTO);
 		intent.setData(Uri.parse("mailto:"));
 		intent.putExtra(Intent.EXTRA_SUBJECT
