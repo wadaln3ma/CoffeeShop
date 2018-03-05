@@ -12,6 +12,7 @@ import com.mycompany.coffeeshop.*;
 public class MainActivity extends Activity {
 
 	private int quantity = 1;
+	private String name;
 	private CheckBox checkBox, check;
 	private EditText nameField;
 	private TextView quantit;
@@ -28,7 +29,32 @@ public class MainActivity extends Activity {
 		quantit = (TextView) findViewById(R.id.quantity);
 
 	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState)
+	{
+		// TODO: Implement this method
+		super.onSaveInstanceState(outState);
 
+		name = nameField.getText().toString();
+		outState.putString("Sname", name);
+		outState.putInt("quantity", quantity);
+
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState)
+	{
+		// TODO: Implement this method
+		super.onRestoreInstanceState(savedInstanceState);
+
+		nameField.setText(savedInstanceState.getString("Sname"));
+		quantity = savedInstanceState.getInt("quantity");
+		quantit.setText(String.valueOf(quantity));
+	}
+
+	
+	
 
 	public void Increment (View view){
 		if (quantity >= 100){
@@ -60,7 +86,7 @@ public class MainActivity extends Activity {
 		}
 		
 		price *= quantity;
-		String name = nameField.getText().toString();
+	    name = nameField.getText().toString();
 		String priceMessage = "Name : " + name +"\n"
 		+"Add whipped Creame : " + hasWhippedCream +"\n"
 		+"Add Chocolate : " + hasChocolate +"\n"
@@ -80,7 +106,7 @@ public class MainActivity extends Activity {
 	private void displayQuantity(int quanx){
 		quantit.setText(String.valueOf(quantity));
 	}
-
+	
 	
 }
 
